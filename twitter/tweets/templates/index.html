@@ -1,0 +1,12 @@
+<Html>
+    <Body>
+        <form action="/submit" method="post">
+            {% csrf_token %}
+            Querry Number:<br>
+            <input type="radio" name="query_number" value="2">2
+            <input type="radio" name="query_number" value="11">11<br>
+            <br><br>
+            <input type="submit" value="Submit">
+        </form>
+    </Body>
+</Html>

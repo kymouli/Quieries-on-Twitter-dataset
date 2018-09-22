@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+</style>
+</head>
+<body>
+
+<h2>Results:</h2>
+
+<table>
+  <tr>
+      {% for col in columns %}
+        <th>{{ col }}</th>
+      {% endfor %}
+  </tr>
+{% if query_number == '2' %}
+    {% for k in result %}
+        <tr><td>
+                {{ hashtag }}
+            </td>
+            <td>
+                {{ result.single_hashtag }}
+            </td>
+            <td>
+                {{ result.single_mention }}
+            </td>
+        </tr>
+    {% endfor %}
+{%  endif %}
+{% if query_number == '11' %}
+    {% for k in result %}
+        <tr><td>
+                {{ cur_date }}
+            </td>
+            <td>
+                {{ result.single_hashtag }}
+            </td>
+            <td>
+                {{ result.single_mention }}
+            </td>
+        </tr>
+    {% endfor %}
+{%  endif %}
+
+</table>
+
+</body>
+</html>
